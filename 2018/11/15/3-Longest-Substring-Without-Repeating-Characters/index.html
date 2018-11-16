@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="工具技巧,">
+  <meta name="keywords" content="Array,双指针,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="hexo clean  // clean本地项目，防止缓存hexo g      // 根据你编辑的md格式的博客，生成静态网页hexo d      // 将本地博客发布到github hexo init       //在指定目录执行该命令，会将当前目录初始化为hexo站点，生成hexo站点所需的一切文件hexo new “my new blog title”   //新建一篇文章。如果没有设">
-<meta name="keywords" content="工具技巧">
+<meta name="description" content="O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring(S">
+<meta name="keywords" content="Array,双指针">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo how to">
-<meta property="og:url" content="http://yoursite.com/2018/11/15/Hexo-how-to/index.html">
+<meta property="og:title" content="3 Longest Substring Without Repeating Characters">
+<meta property="og:url" content="http://yoursite.com/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/index.html">
 <meta property="og:site_name" content="拨鼠侠的一天">
-<meta property="og:description" content="hexo clean  // clean本地项目，防止缓存hexo g      // 根据你编辑的md格式的博客，生成静态网页hexo d      // 将本地博客发布到github hexo init       //在指定目录执行该命令，会将当前目录初始化为hexo站点，生成hexo站点所需的一切文件hexo new “my new blog title”   //新建一篇文章。如果没有设">
+<meta property="og:description" content="O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring(S">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-16T07:13:49.974Z">
+<meta property="og:updated_time" content="2018-11-16T07:36:50.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo how to">
-<meta name="twitter:description" content="hexo clean  // clean本地项目，防止缓存hexo g      // 根据你编辑的md格式的博客，生成静态网页hexo d      // 将本地博客发布到github hexo init       //在指定目录执行该命令，会将当前目录初始化为hexo站点，生成hexo站点所需的一切文件hexo new “my new blog title”   //新建一篇文章。如果没有设">
+<meta name="twitter:title" content="3 Longest Substring Without Repeating Characters">
+<meta name="twitter:description" content="O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring(S">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/15/Hexo-how-to/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/">
 
 
 
 
 
-  <title>Hexo how to | 拨鼠侠的一天</title>
+  <title>3 Longest Substring Without Repeating Characters | 拨鼠侠的一天</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Hexo-how-to/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="拨鼠侠">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo how to</h1>
+          <h1 class="post-title" itemprop="name headline">3 Longest Substring Without Repeating Characters</h1>
         
 
         <div class="post-meta">
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T22:25:18-08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T23:20:20-08:00">
                 2018-11-15
               </time>
             
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo相关/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo相关</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -323,8 +323,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/15/Hexo-how-to/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/15/Hexo-how-to/" itemprop="commentCount"></span>
+                <a href="/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/15/3-Longest-Substring-Without-Repeating-Characters/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -352,11 +352,12 @@
       
 
       
-        <p>hexo clean  // clean本地项目，防止缓存<br>hexo g      // 根据你编辑的md格式的博客，生成静态网页<br>hexo d      // 将本地博客发布到github</p>
-<p>hexo init       //在指定目录执行该命令，会将当前目录初始化为hexo站点，生成hexo站点所需的一切文件<br>hexo new “my new blog title”   //新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。<br>hexo clean      // 清除缓存，如果对本地文件做了修改，同步到远程验证修改的效果之前，先clean，清除缓存<br>hexo generate   // 可以简写成hexo g 根据markdown文件生成静态文件<br>hexo server     // 或者简写成hexo s 启动本地hexo 服务器，默认localhost:4000可以访问<br>hexo deploy     // 或者简写成hexo d 将本地修改，部署到远端<br>hexo version    // 显示hexo版本</p>
-<p>NexT主题配置及优化<br>NexT主题是一套简约的主题，设置完成之后，就像我的博客现在的样子，NexT主题的详细配置请看这里，这个是NexT主题作者维护的配置文档，作者是国人，所以文档是中文的，而且写的非常详细，对照文档，所有功能都能轻松实现。等你配置完成后，你的博客将拥有评论系统，访问次数统计，站内搜索，代码高亮，百度统计，社交分享（分享到微博，微信，qq等）等等强大的功能。官方文档很详细，我就不再赘述了。</p>
-<p>其他遗漏的点<br>如何删除一篇博文：<br>当然，我们辛辛苦苦写了博文，一般是不会删除的，最多修改一下，但是我们搭建的过程中或者刚搭建好个人博客站点，可能一激动就发了好多测试博文，如果想删除这类文章，在Finder中，找到本地博客所在目录，找到/source/_posts文件夹，里面放了所有我们写的博客，想删除哪篇，直接在这里删除，然后再重新发布到github，这篇博文就不见了</p>
-<p>#Reference<br><a href="https://madongqiang2201.github.io/2016/07/21/Mac%E4%B8%8BHexo%EF%BC%8Bgithub-pages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">如何搭建Hexo</a><br><a href="https://zhuanlan.zhihu.com/p/37342238" target="_blank" rel="noopener">Hexo偷懒技巧</a></p>
+        <p>O(n) 两个指针前后追，用个数组或者map存信息</p>
+<p>自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过</p>
+<p><strong>不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = s.length();</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span>[] strArr = s.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] chars = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>];</span><br><span class="line">    Arrays.fill(chars, -<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= j &amp;&amp; j &lt; s.length()) &#123;</span><br><span class="line">      <span class="keyword">if</span> (chars[strArr[j]] == -<span class="number">1</span>) &#123;</span><br><span class="line">        res = Math.max(res, j - i + <span class="number">1</span>);</span><br><span class="line">        chars[strArr[j]] = j;</span><br><span class="line">        j++;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> lastSeen = chars[strArr[j]];</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= lastSeen) &#123;</span><br><span class="line">          chars[strArr[i++]] = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        chars[strArr[j]] = j;</span><br><span class="line">        j++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>答案方法：不需要存index</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">    Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (j &lt; s.length()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!set.contains(s.charAt(j))) &#123;</span><br><span class="line">            set.add(s.charAt(j++));</span><br><span class="line">            max = Math.max(max, set.size());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            set.remove(s.charAt(i++));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> max;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -374,7 +375,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/工具技巧/" rel="tag"># 工具技巧</a>
+            <a href="/tags/Array/" rel="tag"># Array</a>
+          
+            <a href="/tags/双指针/" rel="tag"># 双指针</a>
           
         </div>
       
@@ -387,15 +390,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/15/Hexo-how-to/" rel="next" title="Hexo how to">
+                <i class="fa fa-chevron-left"></i> Hexo how to
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/" rel="prev" title="3 Longest Substring Without Repeating Characters">
-                3 Longest Substring Without Repeating Characters <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -684,9 +687,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/11/15/Hexo-how-to/';
-          this.page.identifier = '2018/11/15/Hexo-how-to/';
-          this.page.title = 'Hexo how to';
+          this.page.url = 'http://yoursite.com/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/';
+          this.page.identifier = '2018/11/15/3-Longest-Substring-Without-Repeating-Characters/';
+          this.page.title = '3 Longest Substring Without Repeating Characters';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://energyd.disqus.com/embed.js';
