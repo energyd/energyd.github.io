@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring(S">
+<meta name="description" content="题 O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring">
 <meta name="keywords" content="Array,双指针">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3 Longest Substring Without Repeating Characters">
 <meta property="og:url" content="http://yoursite.com/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/index.html">
 <meta property="og:site_name" content="拨鼠侠的一天">
-<meta property="og:description" content="O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring(S">
+<meta property="og:description" content="题 O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-16T07:36:50.906Z">
+<meta property="og:updated_time" content="2018-11-16T07:44:25.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3 Longest Substring Without Repeating Characters">
-<meta name="twitter:description" content="O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring(S">
+<meta name="twitter:description" content="题 O(n) 两个指针前后追，用个数组或者map存信息 自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过 不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可 12345678910111213141516171819202122232425public int lengthOfLongestSubstring">
 
 
 
@@ -352,7 +352,8 @@
       
 
       
-        <p>O(n) 两个指针前后追，用个数组或者map存信息</p>
+        <p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener">题</a></p>
+<p>O(n) 两个指针前后追，用个数组或者map存信息</p>
 <p>自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过</p>
 <p><strong>不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = s.length();</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span>[] strArr = s.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] chars = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>];</span><br><span class="line">    Arrays.fill(chars, -<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= j &amp;&amp; j &lt; s.length()) &#123;</span><br><span class="line">      <span class="keyword">if</span> (chars[strArr[j]] == -<span class="number">1</span>) &#123;</span><br><span class="line">        res = Math.max(res, j - i + <span class="number">1</span>);</span><br><span class="line">        chars[strArr[j]] = j;</span><br><span class="line">        j++;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> lastSeen = chars[strArr[j]];</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= lastSeen) &#123;</span><br><span class="line">          chars[strArr[i++]] = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        chars[strArr[j]] = j;</span><br><span class="line">        j++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
