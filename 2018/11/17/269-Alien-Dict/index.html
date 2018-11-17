@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Topo,DFS,BFS,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="拨鼠侠的一天">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="269 Alien Dict 我们重点分析时间复杂度，我们假设拓扑图中有n个节点和m条边。下面我们首先分析下DFS的复杂度：DFS会遍历所有的节点和所有的边，因此复杂度很好分析那就是O(n + m)，这是一个线性时间，比较好的算法。  BFS方式，首先需要init一个拥有n个节点的列表，并且需要遍历一遍图中的边逻辑；这个方式的时间复杂度也是O(n + m)，同样是一个线性时间 Topo-bfs:">
+<meta name="keywords" content="Topo,DFS,BFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="269 Alien Dict">
+<meta property="og:url" content="http://yoursite.com/2018/11/17/269-Alien-Dict/index.html">
 <meta property="og:site_name" content="拨鼠侠的一天">
+<meta property="og:description" content="269 Alien Dict 我们重点分析时间复杂度，我们假设拓扑图中有n个节点和m条边。下面我们首先分析下DFS的复杂度：DFS会遍历所有的节点和所有的边，因此复杂度很好分析那就是O(n + m)，这是一个线性时间，比较好的算法。  BFS方式，首先需要init一个拥有n个节点的列表，并且需要遍历一遍图中的边逻辑；这个方式的时间复杂度也是O(n + m)，同样是一个线性时间 Topo-bfs:">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-17T21:15:41.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拨鼠侠的一天">
+<meta name="twitter:title" content="269 Alien Dict">
+<meta name="twitter:description" content="269 Alien Dict 我们重点分析时间复杂度，我们假设拓扑图中有n个节点和m条边。下面我们首先分析下DFS的复杂度：DFS会遍历所有的节点和所有的边，因此复杂度很好分析那就是O(n + m)，这是一个线性时间，比较好的算法。  BFS方式，首先需要init一个拥有n个节点的列表，并且需要遍历一遍图中的边逻辑；这个方式的时间复杂度也是O(n + m)，同样是一个线性时间 Topo-bfs:">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/17/269-Alien-Dict/">
 
 
 
 
 
-  <title>拨鼠侠的一天</title>
+  <title>269 Alien Dict | 拨鼠侠的一天</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -234,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -266,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/269-Alien-Dict/" itemprop="url">269 Alien Dict</a></h1>
+          <h1 class="post-title" itemprop="name headline">269 Alien Dict</h1>
         
 
         <div class="post-meta">
@@ -350,9 +352,7 @@
       
 
       
-        
-          
-            <p><a href="https://leetcode.com/problems/alien-dictionary/submissions/" target="_blank" rel="noopener">269 Alien Dict</a></p>
+        <p><a href="https://leetcode.com/problems/alien-dictionary/submissions/" target="_blank" rel="noopener">269 Alien Dict</a></p>
 <p>我们重点分析时间复杂度，我们假设拓扑图中有n个节点和m条边。下面我们首先分析下DFS的复杂度：DFS会遍历所有的节点和所有的边，因此复杂度很好分析那就是O(n + m)，这是一个线性时间，比较好的算法。 </p>
 <p>BFS方式，首先需要init一个拥有n个节点的列表，并且需要遍历一遍图中的边逻辑；这个方式的时间复杂度也是O(n + m)，同样是一个线性时间</p>
 <p>Topo-bfs:</p>
@@ -367,8 +367,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Map&lt;Character, Set&lt;Character&gt;&gt; graph;</span><br><span class="line">  <span class="comment">// -1 mean unseen, 0 means visiting, 1 means visited</span></span><br><span class="line">  <span class="keyword">private</span> Map&lt;Character, Integer&gt; visit;</span><br><span class="line">  <span class="keyword">private</span> String[] words;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">alienOrder</span><span class="params">(String[] words)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.words = words;</span><br><span class="line">    visit = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    graph = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (words == <span class="keyword">null</span> || words.length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    buildGraph();</span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> c : visit.keySet()) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!dfs(c, sb)) <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"reverse of res is: "</span> + sb.toString());</span><br><span class="line">    <span class="keyword">return</span> sb.reverse().toString();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">dfs</span><span class="params">(<span class="keyword">char</span> cur, StringBuilder sb)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (visit.get(cur) == <span class="number">1</span>) &#123;<span class="comment">//visited</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (visit.get(cur) == <span class="number">0</span>) &#123;<span class="comment">//have cycle</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    visit.put(cur, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> next : graph.getOrDefault(cur, <span class="keyword">new</span> HashSet&lt;&gt;())) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!dfs(next, sb)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    visit.put(cur, <span class="number">1</span>);</span><br><span class="line">    sb.append(cur);<span class="comment">//小弟都被visited，自己就被visited</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildGraph</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (String word : words) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">char</span> c : word.toCharArray()) &#123;</span><br><span class="line">        visit.put(c, -<span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; words.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">char</span>[] arr1 = words[i].toCharArray();</span><br><span class="line">      <span class="keyword">char</span>[] arr2 = words[i + <span class="number">1</span>].toCharArray();</span><br><span class="line">      <span class="keyword">int</span> len = Math.min(arr1.length, arr2.length);</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len; j++) &#123;</span><br><span class="line">        <span class="keyword">char</span> one = arr1[j];</span><br><span class="line">        <span class="keyword">char</span> two = arr2[j];</span><br><span class="line">        graph.putIfAbsent(one, <span class="keyword">new</span> HashSet&lt;&gt;());</span><br><span class="line">        <span class="keyword">if</span> (one != two) &#123;</span><br><span class="line">          graph.get(one).add(two);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  String[] input = &#123;<span class="string">"ab"</span>, <span class="string">"bc"</span>, <span class="string">"cde"</span>&#125;;</span><br><span class="line">  Solution sol = <span class="keyword">new</span> Solution();</span><br><span class="line">  System.out.println(<span class="string">"order is: "</span> + sol.alienOrder(input));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -383,328 +381,40 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="拨鼠侠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/boshu_gif.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="拨鼠侠的一天">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/" itemprop="url">3 Longest Substring Without Repeating Characters</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T23:20:20-08:00">
-                2018-11-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/Topo/" rel="tag"># Topo</a>
           
-
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/15/3-Longest-Substring-Without-Repeating-Characters/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/BFS/" rel="tag"># BFS</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener">题</a></p>
-<p>O(n) 两个指针前后追，用个数组或者map存信息</p>
-<p>自己方法：之前用map做到最后一个testcase会超时，换成用int[256]可过</p>
-<p><strong>不知为何用chars[“ “ - ‘0’]这样不行，空格会被转换成-16，直接用chars[“ “]即可</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> n = s.length();</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span>[] strArr = s.toCharArray();</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] chars = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">256</span>];</span><br><span class="line">    Arrays.fill(chars, -<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">while</span> (i &lt;= j &amp;&amp; j &lt; s.length()) &#123;</span><br><span class="line">      <span class="keyword">if</span> (chars[strArr[j]] == -<span class="number">1</span>) &#123;</span><br><span class="line">        res = Math.max(res, j - i + <span class="number">1</span>);</span><br><span class="line">        chars[strArr[j]] = j;</span><br><span class="line">        j++;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> lastSeen = chars[strArr[j]];</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= lastSeen) &#123;</span><br><span class="line">          chars[strArr[i++]] = -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        chars[strArr[j]] = j;</span><br><span class="line">        j++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>答案方法：不需要存index</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">    Set&lt;Character&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (j &lt; s.length()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!set.contains(s.charAt(j))) &#123;</span><br><span class="line">            set.add(s.charAt(j++));</span><br><span class="line">            max = Math.max(max, set.size());</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            set.remove(s.charAt(i++));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> max;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/Hexo-how-to/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="拨鼠侠">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/boshu_gif.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="拨鼠侠的一天">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/15/Hexo-how-to/" itemprop="url">Hexo how to</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-15T22:25:18-08:00">
-                2018-11-15
-              </time>
+              <a href="/2018/11/15/3-Longest-Substring-Without-Repeating-Characters/" rel="next" title="3 Longest Substring Without Repeating Characters">
+                <i class="fa fa-chevron-left"></i> 3 Longest Substring Without Repeating Characters
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo相关/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo相关</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/15/Hexo-how-to/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/15/Hexo-how-to/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>hexo clean  // clean本地项目，防止缓存<br>hexo g      // 根据你编辑的md格式的博客，生成静态网页<br>hexo d      // 将本地博客发布到github</p>
-<p>hexo init       //在指定目录执行该命令，会将当前目录初始化为hexo站点，生成hexo站点所需的一切文件<br>hexo new “my new blog title”   //新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。<br>hexo clean      // 清除缓存，如果对本地文件做了修改，同步到远程验证修改的效果之前，先clean，清除缓存<br>hexo generate   // 可以简写成hexo g 根据markdown文件生成静态文件<br>hexo server     // 或者简写成hexo s 启动本地hexo 服务器，默认localhost:4000可以访问<br>hexo deploy     // 或者简写成hexo d 将本地修改，部署到远端<br>hexo version    // 显示hexo版本</p>
-<p>NexT主题配置及优化<br>NexT主题是一套简约的主题，设置完成之后，就像我的博客现在的样子，NexT主题的详细配置请看这里，这个是NexT主题作者维护的配置文档，作者是国人，所以文档是中文的，而且写的非常详细，对照文档，所有功能都能轻松实现。等你配置完成后，你的博客将拥有评论系统，访问次数统计，站内搜索，代码高亮，百度统计，社交分享（分享到微博，微信，qq等）等等强大的功能。官方文档很详细，我就不再赘述了。</p>
-<p>其他遗漏的点<br>如何删除一篇博文：<br>当然，我们辛辛苦苦写了博文，一般是不会删除的，最多修改一下，但是我们搭建的过程中或者刚搭建好个人博客站点，可能一激动就发了好多测试博文，如果想删除这类文章，在Finder中，找到本地博客所在目录，找到/source/_posts文件夹，里面放了所有我们写的博客，想删除哪篇，直接在这里删除，然后再重新发布到github，这篇博文就不见了</p>
-<p>#Reference<br><a href="https://madongqiang2201.github.io/2016/07/21/Mac%E4%B8%8BHexo%EF%BC%8Bgithub-pages%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" target="_blank" rel="noopener">如何搭建Hexo</a><br><a href="https://zhuanlan.zhihu.com/p/37342238" target="_blank" rel="noopener">Hexo偷懒技巧</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -714,10 +424,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -725,6 +436,20 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -948,6 +673,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -965,6 +694,18 @@
       <script id="dsq-count-scr" src="https://energyd.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/11/17/269-Alien-Dict/';
+          this.page.identifier = '2018/11/17/269-Alien-Dict/';
+          this.page.title = '269 Alien Dict';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://energyd.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
