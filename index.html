@@ -249,6 +249,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/27/815-Bus-Routes/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拨鼠侠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boshu_gif.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拨鼠侠的一天">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/27/815-Bus-Routes/" itemprop="url">815 Bus Routes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-27T21:53:31-08:00">
+                2018-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/27/815-Bus-Routes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/27/815-Bus-Routes/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>典型bfs最短路径题. 本题关键是看出问题的本质: 即bus和bus之间建边, 可以把bus看做是一个node (但是做题时候queue里还是放的stop). bfs每一层包含由这个车站可以不转车到达的所有车站</p>
+<p><strong>注意一个关键点: visited记录的是已经访问完的bus而不是stop</strong><br>否则我的写法每次都会遍历所有buses, 肯定TLE</p>
+<p>那么实现就简单了: 一开始把S放入queue, 算作第0层, 然后把所有S能不转车到达的点加入queue, 这算作第1层<br>比如: <code>routes = [1, 2, 7], [3, 6, 7]</code> 如果’S=7’, 那就把’1, 2, 3, 6’都放入queue里, 如果’S=6’, 就放’3, 7’</p>
+<p>我用的busMap存储每个bus的所有stops,然后在针对某个stop查找下一层的时候需要遍历每个bus看这个stop在不在. 答案的方法是用一个map存储经过每个stop的所有bus, 那立马就能知道经过这个stop的所有bus了, 显然是更好地方法, 下一刷可以这么写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BusRoutes</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  Map&lt;Integer, Set&lt;Integer&gt;&gt; busMap;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numBusesToDestination</span><span class="params">(<span class="keyword">int</span>[][] routes, <span class="keyword">int</span> S, <span class="keyword">int</span> T)</span> </span>&#123;</span><br><span class="line">    buildGraph(routes);</span><br><span class="line">    Set&lt;Integer&gt; busSeen = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    Queue&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    queue.offer(S);</span><br><span class="line">    <span class="keyword">int</span> transfer = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">      <span class="keyword">int</span> size = queue.size();</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> curStop = queue.poll();</span><br><span class="line">        <span class="keyword">if</span> (curStop == T) <span class="keyword">return</span> transfer;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 这里遍历每个bus看curStop在不在里面</span></span><br><span class="line">        <span class="comment">// 如果按照答案的方法就不用这个遍历</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; routes.length; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (busSeen.contains(j)) <span class="keyword">continue</span>;</span><br><span class="line">          <span class="keyword">if</span> (busMap.get(j).contains(curStop)) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> sameBusStop : busMap.get(j)) &#123;</span><br><span class="line">              queue.offer(sameBusStop);</span><br><span class="line">            &#125;</span><br><span class="line">            busSeen.add(j);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//本层结束</span></span><br><span class="line">      transfer++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">buildGraph</span><span class="params">(<span class="keyword">int</span>[][] routes)</span> </span>&#123;</span><br><span class="line">    busMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; routes.length; i++) &#123;</span><br><span class="line">      busMap.put(i, <span class="keyword">new</span> HashSet&lt;&gt;());</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; routes[i].length; j++) &#123;</span><br><span class="line">        busMap.get(i).add(routes[i][j]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[][] routes = &#123;&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">7</span>&#125;, &#123;<span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>&#125;&#125;;</span><br><span class="line">    BusRoutes sol = <span class="keyword">new</span> BusRoutes();</span><br><span class="line">    System.out.println(sol.numBusesToDestination(routes, <span class="number">1</span>, <span class="number">6</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/Google-on-site-11-26/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1266,7 +1422,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1277,7 +1433,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>
@@ -1288,7 +1444,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
