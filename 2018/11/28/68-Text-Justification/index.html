@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Google,">
+  <meta name="keywords" content="String,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="bus route - https://leetcode.com/problems/bus-routes/ union find 删节点 largest segment in an array bike person match ​    - 求最小距离之类的么? ​    - 问你，你能拿到哪个bike, 用heap string compare">
-<meta name="keywords" content="Google">
+<meta name="description" content="本题考查细节处理和根据要求写出程序的能力. 思路就是顺序扫描词, 一行一行将词放入. 对于每一行, 先求出这行最多能放下多少个单词, 再根据是不是最后一行决定是left justification还是平均分布空格.  注意过程中有多处需要巧妙构思的写法. 比如怎么平均分布空格. 具体看代码 123456789101112131415161718192021222324252627282930313">
+<meta name="keywords" content="String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google on-site 11&#x2F;26">
-<meta property="og:url" content="http://yoursite.com/2018/11/26/Google-on-site-11-26/index.html">
+<meta property="og:title" content="68 Text Justification">
+<meta property="og:url" content="http://yoursite.com/2018/11/28/68-Text-Justification/index.html">
 <meta property="og:site_name" content="拨鼠侠的一天">
-<meta property="og:description" content="bus route - https://leetcode.com/problems/bus-routes/ union find 删节点 largest segment in an array bike person match ​    - 求最小距离之类的么? ​    - 问你，你能拿到哪个bike, 用heap string compare">
+<meta property="og:description" content="本题考查细节处理和根据要求写出程序的能力. 思路就是顺序扫描词, 一行一行将词放入. 对于每一行, 先求出这行最多能放下多少个单词, 再根据是不是最后一行决定是left justification还是平均分布空格.  注意过程中有多处需要巧妙构思的写法. 比如怎么平均分布空格. 具体看代码 123456789101112131415161718192021222324252627282930313">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-27T07:24:38.804Z">
+<meta property="og:updated_time" content="2018-11-29T05:02:45.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Google on-site 11&#x2F;26">
-<meta name="twitter:description" content="bus route - https://leetcode.com/problems/bus-routes/ union find 删节点 largest segment in an array bike person match ​    - 求最小距离之类的么? ​    - 问你，你能拿到哪个bike, 用heap string compare">
+<meta name="twitter:title" content="68 Text Justification">
+<meta name="twitter:description" content="本题考查细节处理和根据要求写出程序的能力. 思路就是顺序扫描词, 一行一行将词放入. 对于每一行, 先求出这行最多能放下多少个单词, 再根据是不是最后一行决定是left justification还是平均分布空格.  注意过程中有多处需要巧妙构思的写法. 比如怎么平均分布空格. 具体看代码 123456789101112131415161718192021222324252627282930313">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/26/Google-on-site-11-26/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/28/68-Text-Justification/">
 
 
 
 
 
-  <title>Google on-site 11/26 | 拨鼠侠的一天</title>
+  <title>68 Text Justification | 拨鼠侠的一天</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/26/Google-on-site-11-26/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/68-Text-Justification/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="拨鼠侠">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Google on-site 11/26</h1>
+          <h1 class="post-title" itemprop="name headline">68 Text Justification</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-26T23:22:03-08:00">
-                2018-11-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-28T20:09:38-08:00">
+                2018-11-28
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/面经/" itemprop="url" rel="index">
-                    <span itemprop="name">面经</span>
+                  <a href="/categories/Simulation/" itemprop="url" rel="index">
+                    <span itemprop="name">Simulation</span>
                   </a>
                 </span>
 
@@ -323,8 +323,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/26/Google-on-site-11-26/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/26/Google-on-site-11-26/" itemprop="commentCount"></span>
+                <a href="/2018/11/28/68-Text-Justification/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/11/28/68-Text-Justification/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -352,13 +352,9 @@
       
 
       
-        <p>bus route - <a href="https://leetcode.com/problems/bus-routes/" target="_blank" rel="noopener">https://leetcode.com/problems/bus-routes/</a></p>
-<p>union find 删节点</p>
-<p>largest segment in an array</p>
-<p>bike person match</p>
-<p>​    - 求最小距离之类的么?</p>
-<p>​    - 问你，你能拿到哪个bike, 用heap</p>
-<p>string compare</p>
+        <p>本题考查细节处理和根据要求写出程序的能力. 思路就是顺序扫描词, 一行一行将词放入. 对于每一行, 先求出这行最多能放下多少个单词, 再根据是不是最后一行决定是left justification还是平均分布空格. </p>
+<p>注意过程中有多处需要巧妙构思的写法. 比如怎么平均分布空格. 具体看代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;String&gt; <span class="title">fullJustify</span><span class="params">(String[] words, <span class="keyword">int</span> maxWidth)</span> </span>&#123;</span><br><span class="line">      List&lt;String&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">      <span class="keyword">int</span> wordIdx = <span class="number">0</span>;</span><br><span class="line">      <span class="comment">// 每个loop相当于一行</span></span><br><span class="line">      <span class="keyword">while</span> (wordIdx &lt; words.length) &#123;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="comment">// 新开一行先放一个词进去, count是该行的字符数</span></span><br><span class="line">        <span class="keyword">int</span> count = words[wordIdx].length();</span><br><span class="line">        <span class="comment">// 本行能放的最后一个词的index, 出界代表放不下</span></span><br><span class="line">        <span class="keyword">int</span> lastWordIdx = wordIdx + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 试着尽量放多的词</span></span><br><span class="line">        <span class="keyword">while</span> (lastWordIdx &lt; words.length) &#123;</span><br><span class="line">          <span class="keyword">if</span> (count + <span class="number">1</span> + words[lastWordIdx].length() &gt; maxWidth) <span class="keyword">break</span>;</span><br><span class="line">          count += <span class="number">1</span> + words[lastWordIdx].length();</span><br><span class="line">          lastWordIdx++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        sb.append(words[wordIdx]);</span><br><span class="line">        <span class="comment">// 放完第一个词还剩几个词要放</span></span><br><span class="line">        <span class="keyword">int</span> numOfWordsLeft = lastWordIdx - wordIdx - <span class="number">1</span>;<span class="comment">// 注意这里不要写错</span></span><br><span class="line">        <span class="comment">// 如果是最后一行则靠左justify,把词依次放入(一个空格隔开)然后后面填上空格</span></span><br><span class="line">        <span class="keyword">if</span> (lastWordIdx == words.length || numOfWordsLeft == <span class="number">0</span>) &#123;<span class="comment">//注意这个判断</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = wordIdx + <span class="number">1</span>; i &lt; lastWordIdx; i++) &#123;<span class="comment">//注意这里i的范围</span></span><br><span class="line">            sb.append(<span class="string">' '</span>);<span class="comment">//先放空格</span></span><br><span class="line">            sb.append(words[i]);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 填上空格, 注意这里的i取值直接送sb末尾开始就行</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = sb.length(); i &lt; maxWidth; i++) &#123;</span><br><span class="line">            sb.append(<span class="string">' '</span>);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;<span class="comment">// 不是最后一行,需要平均分配空格</span></span><br><span class="line">          <span class="comment">// spaces - 每个词后面跟多少空格</span></span><br><span class="line">          <span class="comment">// extraSpace - 总共需要给多少个词多加1个空格</span></span><br><span class="line">          <span class="keyword">int</span> spaces = (maxWidth - count) / numOfWordsLeft;</span><br><span class="line">          <span class="keyword">int</span> extraSpace = (maxWidth - count) % numOfWordsLeft;</span><br><span class="line">          <span class="comment">// 放入剩下的词</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> i = wordIdx + <span class="number">1</span>; i &lt; lastWordIdx; i++) &#123;</span><br><span class="line">            <span class="comment">// 每个词后面加spaces个空格</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; spaces; j++) &#123;</span><br><span class="line">              sb.append(<span class="string">' '</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如需extraSpace就加上</span></span><br><span class="line">            <span class="keyword">if</span> (extraSpace &gt; <span class="number">0</span>) &#123;</span><br><span class="line">              sb.append(<span class="string">' '</span>);</span><br><span class="line">              extraSpace--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 注意这个空格不要漏, 这是已经算上了的空格</span></span><br><span class="line">            sb.append(<span class="string">' '</span>);</span><br><span class="line">            sb.append(words[i]);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        wordIdx = lastWordIdx;<span class="comment">//注意</span></span><br><span class="line">        res.add(sb.toString());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -376,7 +372,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Google/" rel="tag"># Google</a>
+            <a href="/tags/String/" rel="tag"># String</a>
           
         </div>
       
@@ -389,8 +385,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/19/212-Word-Search-II/" rel="next" title="212 Word Search II">
-                <i class="fa fa-chevron-left"></i> 212 Word Search II
+              <a href="/2018/11/27/815-Bus-Routes/" rel="next" title="815 Bus Routes">
+                <i class="fa fa-chevron-left"></i> 815 Bus Routes
               </a>
             
           </div>
@@ -398,10 +394,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/27/815-Bus-Routes/" rel="prev" title="815 Bus Routes">
-                815 Bus Routes <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -690,9 +682,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/11/26/Google-on-site-11-26/';
-          this.page.identifier = '2018/11/26/Google-on-site-11-26/';
-          this.page.title = 'Google on-site 11/26';
+          this.page.url = 'http://yoursite.com/2018/11/28/68-Text-Justification/';
+          this.page.identifier = '2018/11/28/68-Text-Justification/';
+          this.page.title = '68 Text Justification';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://energyd.disqus.com/embed.js';
