@@ -249,6 +249,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/Stack-and-Heap/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拨鼠侠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boshu_gif.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拨鼠侠的一天">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/01/Stack-and-Heap/" itemprop="url">Stack and Heap</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-01T07:11:10-08:00">
+                2018-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础知识/" itemprop="url" rel="index">
+                    <span itemprop="name">基础知识</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/01/Stack-and-Heap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/01/Stack-and-Heap/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><p><a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Call_stack</a></p>
+<p>The primary purpose of a call stack is to <em>store the return addresses</em>. When a subroutine is called, the location (address) of the instruction at which the calling routine can later resume needs to be saved somewhere. Using a stack to save the return address has important advantages over alternative <a href="https://en.wikipedia.org/wiki/Calling_convention" target="_blank" rel="noopener">calling conventions</a>. One is that each task can have its own stack, and thus the subroutine can be <a href="https://en.wikipedia.org/wiki/Thread_safety" target="_blank" rel="noopener">thread-safe</a>. Another benefit is that by providing <a href="https://en.wikipedia.org/wiki/Reentrancy_(computing" target="_blank" rel="noopener">reentrancy</a>), <a href="https://en.wikipedia.org/wiki/Recursion_(computer_science" target="_blank" rel="noopener">recursion</a>) is automatically supported. When a function calls itself recursively, a return address needs to be stored for each activation of the function so that it can later be used to return from the function activation. Stack structures provide this capability automatically.</p>
+<p>a call stack may serve additional purposes, including for example: Local data storage, Parameter passing, Evaluation stack, <a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming" target="_blank" rel="noopener">Pointer</a>) to current instance, Enclosing subroutine context and Other return state (exception, etc).</p>
+<h4 id="Stack-Structure"><a href="#Stack-Structure" class="headerlink" title="Stack Structure"></a>Stack Structure</h4><p>A <strong>call stack</strong> is composed of <strong>stack frames</strong> (also called <em>activation records</em> or <em>activation frames</em>). Each stack frame corresponds to a call to a subroutine which has not yet terminated with a return. 通常包含一下几个components:</p>
+<ul>
+<li>the arguments (parameter values) passed to the routine (if any);<ul>
+<li>the return address back to the routine’s caller (e.g. in the running method’s stack frame, an address into the calling method’s code); and</li>
+<li>space for the local variables of the routine (if any).</li>
+</ul>
+</li>
+</ul>
+<p>每个stack都有一个<strong>stack pointer</strong>指向它的最顶部. Popping a frame off the stack does not constitute a fixed decrement of the stack pointer. At function return, the stack pointer is instead restored to the <strong>frame pointer</strong>, the value of the stack pointer just before the function was called.</p>
+<h4 id="Tail-call"><a href="#Tail-call" class="headerlink" title="Tail call"></a>Tail call</h4><p><a href="https://en.wikipedia.org/wiki/Tail_call" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Tail_call</a></p>
+<p>A <strong>tail call</strong> is a <a href="https://en.wikipedia.org/wiki/Subroutine" target="_blank" rel="noopener">subroutine</a> call performed as the final action of a procedure. Tail calls can be implemented without adding a new <a href="https://en.wikipedia.org/wiki/Stack_frame" target="_blank" rel="noopener">stack frame</a> to the <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank" rel="noopener">call stack</a>. Most of the frame of the current procedure is no longer needed, and can be replaced by the frame of the tail call, modified as appropriate. (打比方就像带了parameter的GOTO, can be uniformly coded as [machine code] JUMP instructions)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function foo1(data) &#123;</span><br><span class="line">    return a(data) + 1;</span><br><span class="line">&#125;</span><br><span class="line">function foo2(data) &#123;</span><br><span class="line">    var ret = a(data);</span><br><span class="line">    return ret;</span><br><span class="line">&#125;</span><br><span class="line">function foo3(data) &#123;</span><br><span class="line">    var ret = a(data);</span><br><span class="line">    return (ret == 0) ? 1 : ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>the call to <code>a(data)</code> is in tail position in <code>foo2</code>, but it is <strong>not</strong> in tail position either in <code>foo1</code> or in <code>foo3</code>, because control must return to the caller to allow it to inspect or modify the return value before returning it.</p>
+<h3 id="Stack-vs-Heap"><a href="#Stack-vs-Heap" class="headerlink" title="Stack vs Heap"></a>Stack vs Heap</h3><h4 id="一个关于Mem-Magt的好链接-讲了GC-还有stack-vs-heap"><a href="#一个关于Mem-Magt的好链接-讲了GC-还有stack-vs-heap" class="headerlink" title="一个关于Mem Magt的好链接, 讲了GC, 还有stack vs heap"></a>一个关于Mem Magt的好链接, 讲了GC, 还有stack vs heap</h4><p><a href="https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java" target="_blank" rel="noopener">https://www.journaldev.com/2856/java-jvm-memory-model-memory-management-in-java</a></p>
+<h4 id="1-Difference-between-stack-and-heap-memory-in-Java"><a href="#1-Difference-between-stack-and-heap-memory-in-Java" class="headerlink" title="1. Difference between stack and heap memory in Java"></a>1. Difference between stack and heap memory in Java</h4><p><a href="http://javarevisited.blogspot.com.au/2013/01/difference-between-stack-and-heap-java.html" target="_blank" rel="noopener">http://javarevisited.blogspot.com.au/2013/01/difference-between-stack-and-heap-java.html</a><a href="https://www.journaldev.com/4098/java-heap-space-vs-stack-memory" target="_blank" rel="noopener">https://www.journaldev.com/4098/java-heap-space-vs-stack-memory</a></p>
+<p>Java Stack memory is used for execution of a thread. They contain method specific values that are short-lived and references to other objects in the heap that are getting referred from the method.</p>
+<p>The stack is attached to a thread, so when the thread exits the stack is reclaimed. The heap is typically allocated at application startup by the runtime, and is reclaimed when the application (technically process) exits.</p>
+<p>The stack is faster because the access pattern makes it trivial to allocate and deallocate memory from it (a pointer/integer is simply incremented or decremented), while the heap has much more complex bookkeeping involved in an allocation or free. Also, each byte in the stack tends to be reused very frequently which means it tends to be mapped to the processor’s cache, making it very fast. Another performance hit for the heap is that the heap, being mostly a global resource, typically has to be multi-threading safe, i.e. each allocation and deallocation needs to be - typically - synchronized with “all” other heap accesses in the program.</p>
+<p>来自 <a href="http://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap" target="_blank" rel="noopener">http://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap</a></p>
+<p>JVMs can use a technique called escape analysis, by which they can tell that certain objects remain confined to a single thread for their entire lifetime, and that lifetime is bounded by the lifetime of a given stack frame. Such objects can be safely allocated on the stack instead of the heap. Even better, for small objects, the JVM can optimize away the allocation entirely and simply hoist the object’s fields into registers. Thus, beyond saying “the object is created and the field is there too”, one cannot say if something is on the heap or on the stack. Note that for small, short lived objects, its possible that the ‘object’ won’t exist in memory as such and may instead have its fields placed directly in registers. JVMs are surprisingly good at figuring out things that we used to assume only the developer could know. By letting the JVM choose between stack allocation and heap allocation on a case-by-case basis, we can get the performance benefits of stack allocation without making the programmer agonize over whether to allocate on the stack or on the heap. Thus, if you have code that looks like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void foo(int arg) &#123;</span><br><span class="line">    Bar qux = new Bar(arg);</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>where the … doesn’t allow qux to leave that scope, qux may be allocated on the stack instead. This is actually a win for the VM because it means it doesn’t need to ever be garbage collected - it will disappear when it leaves the scope.</p>
+<p><a href="http://programmers.stackexchange.com/questions/65281/stack-and-heap-memory-in-java" target="_blank" rel="noopener">http://programmers.stackexchange.com/questions/65281/stack-and-heap-memory-in-java</a></p>
+<h4 id="2-Java-Heap-Space-or-Java-Heap-Memory"><a href="#2-Java-Heap-Space-or-Java-Heap-Memory" class="headerlink" title="2. Java Heap Space or Java Heap Memory"></a>2. Java Heap Space or Java Heap Memory</h4><p><a href="http://javarevisited.blogspot.com/2011/05/java-heap-space-memory-size-jvm.html" target="_blank" rel="noopener">http://javarevisited.blogspot.com/2011/05/java-heap-space-memory-size-jvm.html</a></p>
+<p>Heap in Java generally located at bottom of address space and move upwards. whenever we create object using new operator or by any another means object is allocated memory from Heap and When object dies or garbage collected ,memory goes back to Heap space in Java<a href="http://programmers.stackexchange.com/questions/65281/stack-and-heap-memory-in-java" target="_blank" rel="noopener">http://programmers.stackexchange.com/questions/65281/stack-and-heap-memory-in-java</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/68-Text-Justification/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1578,7 +1757,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1589,7 +1768,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>
@@ -1600,7 +1779,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
