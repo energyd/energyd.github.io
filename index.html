@@ -249,6 +249,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/15/Kth-Largest-Number/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="拨鼠侠">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/boshu_gif.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="拨鼠侠的一天">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/15/Kth-Largest-Number/" itemprop="url">Kth Largest Number</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-15T16:22:00-08:00">
+                2018-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/题型/" itemprop="url" rel="index">
+                    <span itemprop="name">题型</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/15/Kth-Largest-Number/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/15/Kth-Largest-Number/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Leetcode 4 是求两个有序数组中位数. 我们将至推广为求第k大的元素. </p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>初阶：有两个数组A和B，假设A和B已经有序（从大到小），求A和B数组中所有数的第K大。</p>
+<p>进阶：有N台机器，每台机器上有一个有序的大数组，需要求得所有机器上所有数中的第K大。注意，需要考虑N台机器的并行计算能力</p>
+<p><a href="https://www.jiuzhang.com/qa/907/" target="_blank" rel="noopener">https://www.jiuzhang.com/qa/907/</a></p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>初阶：比较A[k/2]和B[k/2]，如果A[k/2]&gt;=B[k/2]那么A的前k/2个数一定都在前k-1大中，将A数组前k/2个数扔掉，反之扔掉B的前k/2个数。将k减小k/2。重复上述操作直到k=1。比较A和B的第一个数即可得到结果。时间复杂度O(logk)</p>
+<p>进阶：二分答案S，将S广播给每台机器，每台机器用二分法求得有多少比该数小的数。汇总结果后可判断是该将S往上还是往下调整。</p>
+<p>面试官角度：</p>
+<p>初阶问题是一个难度比较大的算法题。需要有一定的算法训练功底。主要用到的思想是递归。首先容易想到的方法是合并两个数组（见面试题5，有序数组的合并），这样复杂度为O(k)，那么答出这个以后，面试官会问你，还有更好的方法么？这个时候就要往O(logk)的思路去想，O(logk)就意味着需要用一种方法每次将k的规模减小一半，于是想到，每次要扔掉一个数组或两个数组中的k/2个数，于是想到去比较A[k/2]和B[k/2]，仔细思考比较结果，然后想到较大的那一方的前k/2个数一定都在前k-1大的数中， 所以可以扔掉。</p>
+<p>进阶问题的考察点是逆向思维。二分答案是一种常见的算法思路（见面试题2 抄书问题），所以当你想不出题目的时候，往往可以试试看是否可以二分答案。因为需要发挥N台机器的并行计算能力，所以想到让每台机器互不相关的做一件事情，然后将结果汇总来判断。</p>
+<p>一般来讲，面试中问题这两个题目，说明职位对算法能力的要求还是比较高的。 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/01/Stack-and-Heap/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1757,7 +1918,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1768,7 +1929,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">categories</span>
                 
               </div>
@@ -1779,7 +1940,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
