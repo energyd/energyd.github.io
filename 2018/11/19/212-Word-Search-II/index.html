@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化 之前: 这个题其实就是很简单的建Trie然后四个方向dfs，注意一些细节的处理即可  要用一个boolean[][]的矩阵去track每个字符有没有被访问过，不能重复访问 剪枝1: 先找">
+<meta name="description" content="注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化. 这里去看Boggle Game就行了.  复杂度: O(kl + mn4^l)m, n 矩阵长宽, l是平均单词长度, k是dict的单词数kl是建Trie时间, mn是外层循环, 4">
 <meta name="keywords" content="DFS,Trie">
 <meta property="og:type" content="article">
 <meta property="og:title" content="212 Word Search II">
 <meta property="og:url" content="http://yoursite.com/2018/11/19/212-Word-Search-II/index.html">
 <meta property="og:site_name" content="拨鼠侠的一天">
-<meta property="og:description" content="注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化 之前: 这个题其实就是很简单的建Trie然后四个方向dfs，注意一些细节的处理即可  要用一个boolean[][]的矩阵去track每个字符有没有被访问过，不能重复访问 剪枝1: 先找">
+<meta property="og:description" content="注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化. 这里去看Boggle Game就行了.  复杂度: O(kl + mn4^l)m, n 矩阵长宽, l是平均单词长度, k是dict的单词数kl是建Trie时间, mn是外层循环, 4">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-19T05:17:01.503Z">
+<meta property="og:updated_time" content="2018-12-22T06:57:59.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="212 Word Search II">
-<meta name="twitter:description" content="注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化 之前: 这个题其实就是很简单的建Trie然后四个方向dfs，注意一些细节的处理即可  要用一个boolean[][]的矩阵去track每个字符有没有被访问过，不能重复访问 剪枝1: 先找">
+<meta name="twitter:description" content="注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化. 这里去看Boggle Game就行了.  复杂度: O(kl + mn4^l)m, n 矩阵长宽, l是平均单词长度, k是dict的单词数kl是建Trie时间, mn是外层循环, 4">
 
 
 
@@ -352,7 +352,8 @@
       
 
       
-        <p>注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化</p>
+        <p>注意做完BoggleGame再来做这题就知道有个大优化, 就是不用每次call Trie里的search method, 只要每次dfs的时候顺着走就行. 自做代码放在最后了. 其实看大神的方法已经包含了这个优化. 这里去看Boggle Game就行了. </p>
+<p>复杂度: O(kl + mn4^l)<br>m, n 矩阵长宽, l是平均单词长度, k是dict的单词数<br>kl是建Trie时间, mn是外层循环, 4^l是搜索的时间, 因为此时4个方向4种选择, 搜索树深度是l</p>
 <p>之前:</p>
 <p>这个题其实就是很简单的建Trie然后四个方向dfs，注意一些细节的处理即可</p>
 <ol>
